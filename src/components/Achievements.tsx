@@ -4,10 +4,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 // Optional: import image logos if you have them in /assets
 import amazonLogo from "@/assets/amazon-logo.png";
 import walmartLogo from "@/assets/walmart-logo.png";
-import goldmanLogo from "@/assets/goldman-logo.jpeg";
+import goldmanLogo from "@/assets/goldman-logo.png";
 import mckinseyLogo from "@/assets/mckinsey-logo.jpg";
 import acmLogo from "@/assets/acm-logo.png";
-import ietLogo from "@/assets/iet-logo.png";
+import ietLogo from "@/assets/ietindia_logo.jpeg";
 import sihLogo from "@/assets/sih-logo.jpg";
 import unesquoLogo from "@/assets/unesquo-logo.jpeg";
 import nssLogo from "@/assets/nss-logo.png";
