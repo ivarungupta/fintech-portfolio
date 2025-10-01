@@ -1,95 +1,125 @@
-import { Linkedin, Mail, MapPin, ArrowDown, Sparkles } from "lucide-react";
+import { Linkedin, Mail, MapPin, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.png";
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden bg-background">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-hero opacity-10"></div>
-      
-      {/* Floating orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-glow"></div>
+    <section
+      className="relative overflow-hidden bg-background flex flex-col justify-center
+                 min-h-[68vh] md:min-h-[72vh] lg:min-h-[75vh]"
+    >
+      {/* smaller top gap under fixed navbar */}
+      <div className="pt-20 md:pt-24 lg:pt-28" />
+
+      {/* Background accents */}
+      <div className="absolute inset-0 bg-gradient-hero opacity-10" />
+      <div className="pointer-events-none absolute -top-10 left-10 w-56 h-56 md:w-64 md:h-64 bg-primary/20 rounded-full blur-3xl" />
+      <div className="pointer-events-none absolute bottom-10 right-10 w-72 h-72 md:w-80 md:h-80 bg-accent/20 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-5xl mx-auto">
-          {/* Profile Image */}
-          <div className="mb-8 animate-fade-in">
+          {/* Avatar — tightened bottom margin */}
+          <div className="mb-1 md:mb-1">
             <div className="relative inline-block">
-              <div className="absolute inset-0 bg-gradient-accent rounded-full blur-2xl opacity-50 animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-accent rounded-full blur-2xl opacity-50" />
               <img
                 src={profilePhoto}
                 alt="Varun Gupta"
-                className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-background shadow-glow mx-auto"
+                className="relative rounded-full object-cover border-4 border-background shadow-glow mx-auto
+                           w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32"
               />
             </div>
           </div>
 
-          {/* Main Heading */}
-          <div className="mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Sparkles className="h-6 w-6 text-accent animate-pulse" />
-              <span className="text-accent font-semibold tracking-wide uppercase text-sm">
-                Finance × Technology
-              </span>
-              <Sparkles className="h-6 w-6 text-accent animate-pulse" />
-            </div>
-            
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
+          {/* Heading — tighter spacing */}
+          <div className="mb-4 md:mb-5">
+            <h1
+              className="font-display font-bold mb-1
+                         text-[clamp(2rem,5vw,3.5rem)]"
+            >
               <span className="bg-gradient-accent bg-clip-text text-transparent">
                 Varun Gupta
               </span>
             </h1>
-            
-            <p className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-              Quantitative Researcher & Software Engineer
+
+            <p
+              className="font-semibold text-foreground mb-2
+                         text-[clamp(1.25rem,2.2vw,1.75rem)]"
+            >
+              Aspiring Finance Professional
             </p>
-            
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              B.Tech CS Student at BIT Mesra | Building ML-driven quant frameworks & developer tools | 
-              Wells Fargo • 2Cents Capital • Amazon MLSS Scholar
+
+            <p
+              className="text-muted-foreground max-w-3xl mx-auto leading-relaxed
+                         text-[clamp(0.95rem,1.4vw,1.125rem)]"
+            >
+              Wells Fargo (Incoming) | CFA L1 Candidate | Prev: 2Cents Capital, Omifco, Precap, VL 
             </p>
           </div>
 
-          {/* Achievements Pills */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <div className="px-4 py-2 bg-primary/10 rounded-full border border-primary/20 backdrop-blur-sm">
-              <span className="text-sm font-medium text-foreground">🏆 Amazon HackOn S5 Top 25</span>
+          {/* Achievements — smaller gap */}
+          <div className="flex flex-wrap justify-center gap-2.5 md:gap-3 mb-5">
+            <div className="px-3.5 py-1.5 bg-primary/10 rounded-full border border-primary/20 backdrop-blur-sm">
+              <span className="text-[0.85rem] font-medium text-foreground">🏆 Amazon HackOn S5 Top 25</span>
             </div>
-            <div className="px-4 py-2 bg-primary/10 rounded-full border border-primary/20 backdrop-blur-sm">
-              <span className="text-sm font-medium text-foreground">⚡ 4% Alpha vs S&P 500</span>
+            <div className="px-3.5 py-1.5 bg-primary/10 rounded-full border border-primary/20 backdrop-blur-sm">
+              <span className="text-[0.85rem] font-medium text-foreground">⚡ 4% Alpha vs S&amp;P 500</span>
             </div>
-            <div className="px-4 py-2 bg-primary/10 rounded-full border border-primary/20 backdrop-blur-sm">
-              <span className="text-sm font-medium text-foreground">🎓 Goldman Sachs VIS</span>
+            <div className="px-3.5 py-1.5 bg-primary/10 rounded-full border border-primary/20 backdrop-blur-sm">
+              <span className="text-[0.85rem] font-medium text-foreground">🎓 Goldman Sachs VIS</span>
             </div>
           </div>
 
-          {/* Location */}
-          <div className="flex items-center justify-center gap-2 mb-8 text-muted-foreground animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            <MapPin className="h-5 w-5" />
-            <span>Hyderabad, India</span>
+          {/* Location — smaller gap */}
+          <div className="flex items-center justify-center gap-2 mb-5 text-muted-foreground">
+            <MapPin className="h-4 w-4" />
+            <span className="text-[0.95rem]">Hyderabad, India</span>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4 justify-center mb-12 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <Button size="lg" className="bg-gradient-accent hover:opacity-90 shadow-elegant text-lg px-8">
-              <Linkedin className="h-5 w-5 mr-2" />
-              Connect on LinkedIn
+          {/* CTAs — linked + tighter gap */}
+          <div className="flex flex-wrap gap-3 justify-center mb-6">
+            <Button
+              asChild
+              size="lg"
+              className="bg-gradient-accent hover:opacity-90 shadow-elegant
+                         text-[0.95rem] md:text-base px-6 md:px-7 py-5 md:py-6"
+            >
+              <a
+                href="https://www.linkedin.com/in/ivarung/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Varun's LinkedIn profile"
+              >
+                <Linkedin className="h-4 w-4 mr-2" />
+                Connect on LinkedIn
+              </a>
             </Button>
-            <Button size="lg" variant="outline" className="border-2 border-primary/20 hover:bg-primary/5 text-lg px-8">
-              <Mail className="h-5 w-5 mr-2" />
-              Get in Touch
+
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-2 border-primary/20 hover:bg-primary/5
+                         text-[0.95rem] md:text-base px-6 md:px-7 py-5 md:py-6"
+            >
+              <a
+                href="mailto:ivarungupta7@gmail.com"
+                aria-label="Email Varun at ivarungupta7@gmail.com"
+              >
+                <Mail className="h-4 w-4 mr-2" />
+                Get in Touch
+              </a>
             </Button>
           </div>
 
-          {/* Scroll Indicator */}
           <div className="animate-bounce">
-            <ArrowDown className="h-6 w-6 mx-auto text-muted-foreground" />
+            <ArrowDown className="h-5 w-5 mx-auto text-muted-foreground" />
           </div>
         </div>
       </div>
+
+      {/* smaller bottom spacer */}
+      <div className="pb-4 md:pb-6" />
     </section>
   );
 }

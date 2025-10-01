@@ -1,3 +1,6 @@
+import quantTradingImg from "@/data/blog-photos/quant-research.png";
+import wellsFargoImg from "@/data/blog-photos/wellsfargo-vg.jpeg";
+import amazonMLImg from "@/data/blog-photos/amazon-ml.png";
 export interface BlogPost {
   id: string;
   title: string;
@@ -12,9 +15,9 @@ export interface BlogPost {
 export const blogs: BlogPost[] = [
   {
     id: "quant-trading-journey",
-    title: "My Journey into Quantitative Trading",
+    title: "My Journey into Quantitative Research Domain",
     excerpt: "How I built a multi-factor ML-driven quant framework that outperformed the S&P 500 by 4% during my internship at 2Cents Capital.",
-    thumbnail: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
+    thumbnail: quantTradingImg,
     date: "May 15, 2025",
     category: "Finance",
     readTime: "8 min read",
@@ -62,7 +65,7 @@ export const blogs: BlogPost[] = [
     id: "wells-fargo-experience",
     title: "Summer at Wells Fargo: Building Developer Tools",
     excerpt: "Reflecting on my internship at Wells Fargo where I developed migration tools that saved significant developer time.",
-    thumbnail: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+    thumbnail: wellsFargoImg,
     date: "August 20, 2025",
     category: "Technology",
     readTime: "6 min read",
@@ -102,7 +105,7 @@ export const blogs: BlogPost[] = [
     id: "amazon-ml-summer-school",
     title: "Amazon ML Summer School: A Transformative Experience",
     excerpt: "Selected from 80,000 candidates to join Amazon's ML Summer School. Here's what I learned about machine learning at scale.",
-    thumbnail: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+    thumbnail: amazonMLImg,
     date: "September 10, 2025",
     category: "AI & ML",
     readTime: "7 min read",

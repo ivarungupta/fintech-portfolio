@@ -58,7 +58,7 @@ const technicalProjects = [
       "Created backend performance with Python and Node.js to solve any complex problems just by creating a drawing.",
     ],
     skills: ["React.js", "Node.js", "Python", "HTML Canvas", "Gemini API"],
-    github: "#",
+    github: "https://github.com/ivarungupta/Numicube-AI",
     icon: "🧮",
   },
   {
@@ -69,7 +69,7 @@ const technicalProjects = [
       "Implemented supplier management features, purchase order tracking, and customizable reporting to enhance operational efficiency. Additionally, integrated QR code entry technology for streamlined inventory management.",
     ],
     skills: ["CSS", "JavaScript", "Oracle Database", "Express.js", "HTML", "Node.js", "Embedded JavaScript (EJS)", "Oracle SQL Developer"],
-    github: "#",
+    github: "https://github.com/ivarungupta/Smartory-IMS",
     images: 2,
     icon: "📦",
   },
@@ -81,7 +81,7 @@ const technicalProjects = [
       "Developed a PDF generation system using PDFKit, integrating Axios for seamless communication between the client and server, reducing document preparation time and enhancing the overall user experience.",
     ],
     skills: ["Axios", "CSS", "Sharp", "Express.js", "PDFKit", "Multer", "Node.js", "React.js"],
-    github: "#",
+    github: "https://github.com/ivarungupta/SixSplit",
     icon: "✂️",
   },
   {
@@ -92,7 +92,7 @@ const technicalProjects = [
       "Delivers four core offerings: Advisory Services, Rental Service, an integrated Marketplace, and Crop Disease Detection via Imagery, potentially increasing agricultural productivity up to 100x.",
     ],
     skills: ["CSS", "TensorFlow", "JavaScript", "Express.js", "Convolutional Neural Networks (CNN)", "HTML", "MongoDB", "Node.js", "React.js"],
-    github: "#",
+    github: "https://github.com/ivarungupta/KhetiMitr",
     images: 2,
     icon: "🌾",
   },
@@ -103,8 +103,8 @@ const technicalProjects = [
       "Constructed my Portfolio Website showcasing my journey, utilizing foundational technologies such as GSAP and Locomotive.js for enhanced interactivity and user experience, which is a modern UI-based website.",
     ],
     skills: ["CSS", "JavaScript", "Locomotive.js", "HTML", "GreenSock Animation Platform (GSAP)", "Adobe Photoshop"],
-    github: "#",
-    liveLink: "#",
+    github: "https://github.com/ivarungupta/portfolio",
+    liveLink: "https://ivarungupta.github.io/portfolio/",
     icon: "💼",
   },
 ];
@@ -170,17 +170,32 @@ export function Projects() {
                       </h3>
                       <div className="flex gap-2">
                         {project.github && (
-                          <Button size="sm" variant="outline">
-                            <Github className="h-4 w-4 mr-1" />
-                            GitHub
+                          <Button asChild size="sm" variant="outline">
+                            <a
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={`${project.title} GitHub Repository`}
+                            >
+                              <Github className="h-4 w-4 mr-1" />
+                              GitHub
+                            </a>
                           </Button>
                         )}
                         {project.liveLink && (
-                          <Button size="sm" variant="outline">
-                            <ExternalLink className="h-4 w-4 mr-1" />
-                            Live
+                          <Button asChild size="sm" variant="outline">
+                            <a
+                              href={project.liveLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={`${project.title} Live Demo`}
+                            >
+                              <ExternalLink className="h-4 w-4 mr-1" />
+                              Live
+                            </a>
                           </Button>
                         )}
+
                       </div>
                     </div>
                     

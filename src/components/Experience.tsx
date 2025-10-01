@@ -1,6 +1,16 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, MapPin, Calendar } from "lucide-react";
+import { MapPin, Calendar } from "lucide-react";
+import wellsFargoLogo from "@/assets/wells-fargo-logo.png";
+import twoCentsLogo from "@/assets/2centscapital-logo.jpeg"; // example image import
+import omifcoLogo from "@/assets/omifco-logo.jpeg";
+import precapLogo from "@/assets/precap-logo.jpeg";
+import venturelabsLogo from "@/assets/venturelabs-logo.jpeg";
+
+// helper to check if a logo is an image path
+const isImageLogo = (logo: unknown): logo is string =>
+  typeof logo === "string" &&
+  (/^(\/|https?:\/\/)/.test(logo) || /\.(png|jpe?g|svg|webp)$/i.test(logo));
 
 const experiences = [
   {
@@ -13,8 +23,9 @@ const experiences = [
       "Line of Business: Wealth & Investment Management (WIM)",
       "Sub-LOB: Investment Solution Banking Lending and Trust (ISBLT)",
       "*Received PPO (Pre Placement Offer) for exemplary performance.",
+      
     ],
-    logo: "🏦",
+    logo: wellsFargoLogo, // imported image
   },
   {
     title: "Quantitative Researcher (Long Term Equity)",
@@ -29,10 +40,10 @@ const experiences = [
       "Backtested on 20+ years of MSCI US Value Index data and deployed in live trading, outperforming the S&P 500 by 4% during the test period.",
     ],
     skills: ["Analytical Skills", "Python (Programming Language)", "+3 skills"],
-    logo: "💰",
+    logo: twoCentsLogo,
   },
   {
-    title: "Summer Intern (Software/IT)",
+    title: "Summer Trainee (Software/IT)",
     company: "OMIFCO S.A.O.C",
     location: "Sur, Ash Sharqiyah South Governorate, Oman · On-site",
     period: "May 2024 - Jun 2024 · 2 mos",
@@ -44,7 +55,7 @@ const experiences = [
       "Optimized the firm's Inventory Management System using Oracle SQL Developer, improving query performance by 30%.",
     ],
     skills: ["Analytical Skills", "Communication", "+5 skills"],
-    logo: "🏭",
+    logo: omifcoLogo,
   },
   {
     title: "Product Intern",
@@ -56,8 +67,8 @@ const experiences = [
       "Designed, developed, and implemented responsive user interfaces with React, resulting in an improvement in client satisfaction and SEO scores.",
       "Conceptualized and created engaging carousels and informative posts for Content as a Service (CaaS) offerings, driving 10,000+ impressions and boosting client acquisition.",
     ],
-    skills: ["Analytical Skills", "Front-End Development", "+8 skills"],
-    logo: "📱",
+    skills: ["Analytical Skills", "Front-End Development", "SEO"],
+    logo: precapLogo,
   },
   {
     title: "Business Development Associate",
@@ -69,7 +80,7 @@ const experiences = [
       "Collaborated with the Graphic Design & Marketing Team to develop interactive and informative posts for the partner Apna Funds, supporting Content as a Service (CaaS) offerings.",
     ],
     skills: ["Marketing", "Analytical Skills", "+10 skills"],
-    logo: "🚀",
+    logo: venturelabsLogo,
   },
 ];
 
@@ -83,14 +94,29 @@ export function Experience() {
 
         <div className="max-w-4xl mx-auto space-y-6">
           {experiences.map((exp, index) => (
-            <Card key={index} className="p-6 hover:shadow-hover transition-all duration-300 bg-card">
+            <Card
+              key={index}
+              className="p-6 hover:shadow-hover transition-all duration-300 bg-card"
+            >
               <div className="flex gap-4">
+                {/* Logo */}
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-2xl">
-                    {exp.logo}
-                  </div>
+                  {isImageLogo(exp.logo) ? (
+                    <div className="w-12 h-12 rounded-lg overflow-hidden">
+                      <img
+                        src={exp.logo}
+                        alt={`${exp.company} logo`}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                      <span className="text-2xl">{exp.logo}</span>
+                    </div>
+                  )}
                 </div>
-                
+
+                {/* Details */}
                 <div className="flex-1">
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                     <div>
