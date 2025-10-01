@@ -7,7 +7,7 @@ import walmartLogo from "@/assets/walmart-logo.png";
 import goldmanLogo from "@/assets/goldman-logo.png";
 import mckinseyLogo from "@/assets/mckinsey-logo.jpg";
 import acmLogo from "@/assets/acm-logo.png";
-import ietLogo from "@/assets/ietindia_logo.jpeg";
+import ietLogo from "@/assets/ietindia_logo.png";
 import sihLogo from "@/assets/sih-logo.jpg";
 import unesquoLogo from "@/assets/unesquo-logo.jpeg";
 import nssLogo from "@/assets/nss-logo.png";
