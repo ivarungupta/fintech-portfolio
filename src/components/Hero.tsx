@@ -2,7 +2,7 @@ import { Linkedin, Mail, MapPin, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.png";
 
-export function Hero() {
+export function Hero(): JSX.Element {
   return (
     <section
       className="relative overflow-hidden bg-background flex flex-col justify-center
@@ -18,7 +18,7 @@ export function Hero() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-5xl mx-auto">
-          {/* Avatar — tightened bottom margin */}
+          {/* Avatar */}
           <div className="mb-1 md:mb-1">
             <div className="relative inline-block">
               <div className="absolute inset-0 bg-gradient-accent rounded-full blur-2xl opacity-50" />
@@ -31,14 +31,20 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Heading — tighter spacing */}
+          {/* Heading */}
           <div className="mb-4 md:mb-5">
             <h1
-              className="font-display font-bold mb-1
-                         text-[clamp(2rem,5vw,3.5rem)]"
+              className="font-display font-bold mb-1 text-[clamp(2rem,5vw,3.5rem)] flex justify-center items-center gap-2"
             >
               <span className="bg-gradient-accent bg-clip-text text-transparent">
-                Hi, I'm Varun 👋
+                Hi, I'm Varun
+              </span>
+              <span
+                role="img"
+                aria-label="wave"
+                className="inline-block animate-wave text-4xl"
+              >
+                👋
               </span>
             </h1>
 
@@ -53,30 +59,36 @@ export function Hero() {
               className="text-muted-foreground max-w-3xl mx-auto leading-relaxed
                          text-[clamp(0.95rem,1.4vw,1.125rem)]"
             >
-              Wells Fargo (Incoming) | CFA L1 Candidate | Prev: 2Cents Capital, Omifco, Precap, VL 
+              Wells Fargo (Incoming) | CFA L1 Candidate | Prev: 2Cents Capital, Omifco, Precap, VL
             </p>
           </div>
 
-          {/* Achievements — smaller gap */}
+          {/* Achievements */}
           <div className="flex flex-wrap justify-center gap-2.5 md:gap-3 mb-5">
             <div className="px-3.5 py-1.5 bg-primary/10 rounded-full border border-primary/20 backdrop-blur-sm">
-              <span className="text-[0.85rem] font-medium text-foreground">🏆 Amazon HackOn S5 Top 25</span>
+              <span className="text-[0.85rem] font-medium text-foreground">
+                🏆 Amazon HackOn S5 Top 25
+              </span>
             </div>
             <div className="px-3.5 py-1.5 bg-primary/10 rounded-full border border-primary/20 backdrop-blur-sm">
-              <span className="text-[0.85rem] font-medium text-foreground">⚡ 4% Alpha vs S&amp;P 500</span>
+              <span className="text-[0.85rem] font-medium text-foreground">
+                ⚡ 4% Alpha vs S&amp;P 500
+              </span>
             </div>
             <div className="px-3.5 py-1.5 bg-primary/10 rounded-full border border-primary/20 backdrop-blur-sm">
-              <span className="text-[0.85rem] font-medium text-foreground">🎓 Goldman Sachs VIS</span>
+              <span className="text-[0.85rem] font-medium text-foreground">
+                🎓 Goldman Sachs VIS
+              </span>
             </div>
           </div>
 
-          {/* Location — smaller gap */}
+          {/* Location */}
           <div className="flex items-center justify-center gap-2 mb-5 text-muted-foreground">
             <MapPin className="h-4 w-4" />
             <span className="text-[0.95rem]">Hyderabad, India</span>
           </div>
 
-          {/* CTAs — linked + tighter gap */}
+          {/* CTAs */}
           <div className="flex flex-wrap gap-3 justify-center mb-6">
             <Button
               asChild

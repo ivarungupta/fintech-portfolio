@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -14,8 +19,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Playfair Display"', 'serif'],
-        sans: ['Inter', 'sans-serif'],
+        display: ['"Playfair Display"', "serif"],
+        sans: ["Inter", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -92,6 +97,17 @@ export default {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.5" },
         },
+
+        // 👋 NEW — wave animation keyframes
+        wave: {
+          "0%": { transform: "rotate(0deg)" },
+          "10%": { transform: "rotate(14deg)" },
+          "20%": { transform: "rotate(-8deg)" },
+          "30%": { transform: "rotate(14deg)" },
+          "40%": { transform: "rotate(-4deg)" },
+          "50%": { transform: "rotate(10deg)" },
+          "60%, 100%": { transform: "rotate(0deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -100,6 +116,9 @@ export default {
         "slide-in-right": "slide-in-right 0.6s ease-out",
         "float": "float 6s ease-in-out infinite",
         "glow": "glow 3s ease-in-out infinite",
+
+        // 👋 NEW — wave animation class
+        wave: "wave 2.5s ease-in-out infinite",
       },
       backgroundImage: {
         "gradient-hero": "var(--gradient-hero)",
@@ -107,9 +126,9 @@ export default {
         "gradient-accent": "var(--gradient-accent)",
       },
       boxShadow: {
-        "elegant": "var(--shadow-elegant)",
-        "hover": "var(--shadow-hover)",
-        "glow": "var(--shadow-glow)",
+        elegant: "var(--shadow-elegant)",
+        hover: "var(--shadow-hover)",
+        glow: "var(--shadow-glow)",
       },
     },
   },
