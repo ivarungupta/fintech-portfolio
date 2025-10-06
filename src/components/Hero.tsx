@@ -38,7 +38,7 @@ export function Hero() {
                          text-[clamp(2rem,5vw,3.5rem)]"
             >
               <span className="bg-gradient-accent bg-clip-text text-transparent">
-                Varun Gupta
+                Hi, I'm Varun 👋
               </span>
             </h1>
 
